@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <h2 style="text-align: center;"">RESULTS</h2>
+    <div style="margin-left: 3%; margin-top: 0%; margin-right: 3%; margin-bottom: 3%;" class="allPlants">
+        {% for result in results %}
+        <div style="margin-top: 10%; text-align: center;" class="Plant">
+            <h4 style="margin: 0%;">{{result.common_name}}</h4>
+            <p style="margin: 0%;">{{result.scientific_name}}</p>
+            <p style="margin: 0%;color: grey;">Light: {{result.light}}; Size: {{result.size}}; Toxic: {{result.toxic}}</p>
+            <div style="width: 250px; height: 250px; background:url({{result.file_path}}); background-size: cover; background-position: cover; margin: auto">
+            </div>
+            <p style="margin: 0%;">Price: ${{result.price}}0</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

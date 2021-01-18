@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div style="padding-bottom: 4%;" class="header">
+    <div class="Title">
+        <h1 style="text-align: left; padding-left: 2%; padding-top: 2%; margin: 0%"> CAROL'S PLANT STORE </h1>
+        <p style="text-align: left; padding-left: 2%; margin:0%"> BC's Wild Heritage Perennials </p>
+    </div>
+    
+    <div style="text-align: right; padding-right: 2%; margin-top: -4%;" class="buttonWrapper">
+        <button onclick="toggle_custom()">Find Your Perfect Plant</button>
+    </div>
+    <div style="display: none; text-align: right; padding-right: 2%; padding-bottom: 2%;" class="CustomPlant" id="CustomPlant">
+        <form action="/" method="POST">
+            <label for="light"> Looking for a plant that will go in an area with </label>
+                <select id="light" name="light">
+                    <option value="varied">varied</option>
+                    <option value="high">lots of</option>
+                    <option value="low">little</option>
+                    <option value="none">no</option>
+                </select>
+            light. 
+            <br/>
+            I would like a(n) 
+                <select id="size" name="size">
+                    <option value="any">any sized</option>
+                    <option value="small">small-sized</option>
+                    <option value="medium">medium-sized</option>
+                    <option value="large">large-sized</option>
+                </select>
+            plant. 
+            <br/>   
+            Pet and kid friendly?
+            <select id="toxic" name="toxic">
+                <option value="yes">no</option>
+                <option value="no">yes</option>
+            </select>
+            .
+            <br/>
+            <input type="submit" value="SEARCH">
+        </form>
+    </div>
+    
+    
+    <div style="text-align: right; padding-right: 2%;" class="buttonWrapper">
+        <button onclick="toggle_search()">Search by Scientific Name</button>
+    </div>
+    <div style="display: none; text-align: right; padding-right: 2%; padding-bottom: 2%;" class="Search" id="Search">
+        <form action="/search" method="POST">
+            <input type="text" name="search" id="search">
+            <input type="submit" value="SEARCH">
+            <br/>
+        </form>
+    </div>
+</div>
+
+
+<div class="content">
+    <h2 style="text-align: center;"">ALL PLANTS</h2>
+    <div style="padding-bottom: 5%;" class="allPlants">
+        {% for plant in plants %}
+        <div style="margin-bottom: 10%; text-align: center;" class="Plant">
+            <h4 style="margin: 0%;">{{plant.common_name}}</h4>
+            <p style="margin: 0%;">{{plant.scientific_name}}</p>
+            <p style="margin: 0%;color: grey;">Light: {{plant.light}}; Size: {{plant.size}}; Toxic: {{plant.toxic}}</p>
+            <div style="width: 250px; height: 250px; background:url({{plant.file_path}}); background-size: cover; background-position: cover; margin: auto;">
+            </div>
+            <p style="margin: 0%;">Price: ${{plant.price}}0</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+<script type="text/javascript"> 
+    function toggle_custom() {
+        var x = document.querySelector('.CustomPlant');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }  
+    
+    function toggle_search() {
+        var x = document.querySelector('.Search');
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script> 
+{% endblock %}

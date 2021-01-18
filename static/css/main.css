@@ -1,0 +1,27 @@
+body, html {
+    margin: 0px !important;
+    padding: 0px !important;
+    font-family: sans-serif;
+}
+
+.header {
+    margin: 0;
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.allPlants {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+.button-wrapper {
+    text-align: center;
+}
+
+button {
+    font-size: larger;
+}
