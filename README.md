@@ -21,7 +21,7 @@ python3 app.py
 ## Main Features
 My app has 2 main search features: (1) filtering by light conditions, plant size, and toxicity and (2) searching by scientific name. The two features cater to customers of different spectrums: one who is unsure of what plant to choose and the other for people who know what they're looking for. 
 
-For the first feature, I decided to do light conditions, plant size, and toxicity because my original plan was to "sell" non-native indoor plants and those factors help determine plants to put in your home. However, given more time, I would change the filters to be more useful in deciding what native plants to choose, such as max plant height, hardiness, light conditions, soil conditions, and the pollinators it attracts. 
+For the first feature, I decided to do light conditions, plant size, and toxicity because my original plan was to "sell" non-native indoor plants and those factors help determine plants to put in your home. However, I would change the filters to be more useful ones in deciding what native plants to choose, such as max plant height, hardiness, light conditions, soil conditions, and the pollinators it attracts. 
 
 For the second feature, I felt that it was important to make the shopping process simpler for customers who knew what plant they wanted. Not only can customers search for a species, but they can also search by genus to discover all the species within that genus we have to offer.
 
