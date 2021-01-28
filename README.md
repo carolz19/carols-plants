@@ -1,8 +1,6 @@
 # carols-plants
 
-An image repository for the Shopify Summer 2021 Backend Developer Intern Challenge with search functions. The concept behind this application is based on a store that sells BC native plants.
-
-This project is written in Python using Flask as the web framework and SQLite for the database engine.
+Sample store of BC native plants written in Python using Flask as the web framework and SQLite for the database engine.
 
 ## Usage
 This web app has been deployed to Heroku: https://carols-plants.herokuapp.com
